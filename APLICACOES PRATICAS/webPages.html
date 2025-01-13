@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Interatividade em Páginas Web</title>
+</head>
+<body>
+    <h1>Alterar Tema</h1>
+    <button id="darkModeToggle">Ativar Modo Escuro</button>
+
+    <p id="content">Este texto mudará com o tema.</p>
+
+    <script>
+        const button = document.getElementById("darkModeToggle");
+        const body = document.body;
+
+        button.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                button.textContent = "Desativar Modo Escuro";
+            } else {
+                button.textContent = "Ativar Modo Escuro";
+            }
+        });
+
+        // Estilo adicionado via JavaScript para demonstrar
+        const style = document.createElement("style");
+        style.textContent = `
+            .dark-mode {
+                background-color: black;
+                color: white;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulário</title>
+</head>
+<body>
+    <h1>Validação de Formulários</h1>
+    <form id="registrationForm">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" required>
+        <br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" required>
+        <br><br>
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" required minlength="6">
+        <br><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <p id="errorMessage" style="color: red; display: none;">Por favor, preencha todos os campos corretamente.</p>
+
+    <script>
+        const form = document.getElementById("registrationForm");
+        const errorMessage = document.getElementById("errorMessage");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const username = document.getElementById("username").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (username === "" || email === "" || password === "") {
+                errorMessage.style.display = "block";
+            } else {
+                errorMessage.style.display = "none";
+                alert("Formulário enviado com sucesso!");
+            }
+        });
+    </script>
+</body>
+</html>
