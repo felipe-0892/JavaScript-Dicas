@@ -74,7 +74,7 @@ let b = 10; // Erro! Já foi declarada
 # 
 
 ![Exemplo de Funções e Modularidade](functionsExemplo.png)
-![Exemplo de Funções e Modularidade](functionsResposta.png)
+![Exemplo de Funções e Modularidade](functionsResultado.png)
 
 # 
 # 
